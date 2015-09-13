@@ -1,0 +1,771 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.elike.fitness.PublishCourseActivity" >
+
+    <RelativeLayout
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/toolbar_height"
+        android:background="@color/primary_red_color" >
+
+        <RelativeLayout
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:onClick="back" >
+
+            <ImageView
+                android:layout_width="28dp"
+                android:layout_height="20dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/back" />
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="单次课程"
+            android:textColor="@color/white"
+            android:textSize="@dimen/toolbar_text_size" />
+
+        <TextView
+            android:id="@+id/preview"
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:gravity="center"
+            android:text="预览"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_size_s1" />
+    </RelativeLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar"
+        android:background="@color/primary_background_color" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <!-- 按周重复 -->
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:background="@color/white"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp" >
+
+                <TextView
+                    android:id="@+id/count_title"
+                    style="@style/TitleTextStyle"
+                    android:layout_width="80dp"
+                    android:layout_height="35dp"
+                    android:gravity="center_vertical"
+                    android:text="次数" />
+
+                <TextView
+                    android:id="@+id/count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="35dp"
+                    android:layout_toRightOf="@+id/count_title"
+                    android:gravity="center_vertical"
+                    android:text="单次"
+                    android:textSize="@dimen/text_size_s1" />
+
+                <View
+                    android:id="@+id/deliver1"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/hor_lineheight"
+                    android:layout_below="@id/count_title"
+                    android:background="@color/primary_background_color" />
+
+                <TextView
+                    android:id="@+id/name_title"
+                    style="@style/TitleTextStyle"
+                    android:layout_width="80dp"
+                    android:layout_height="35dp"
+                    android:layout_below="@+id/deliver1"
+                    android:gravity="center_vertical"
+                    android:text="课程名称" />
+
+                <TextView
+                    android:id="@+id/name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="35dp"
+                    android:layout_below="@+id/deliver1"
+                    android:layout_toRightOf="@+id/name_title"
+                    android:gravity="center_vertical"
+                    android:text="瑜伽"
+                    android:textSize="@dimen/text_size_s1" />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:padding="5dp" >
+
+                <TextView
+                    style="@style/TitleTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:gravity="center_vertical"
+                    android:text="上课时间" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:background="@drawable/solid_grey_bg"
+                    android:orientation="vertical" >
+
+                    <com.like.customview.SelectedRelativeLayout
+                        android:id="@+id/week_title_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/title_bg_selector" >
+
+                        <TextView
+                            android:id="@+id/week_title"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:padding="3dp"
+                            android:text="按周重复"
+                            android:textColor="@color/title_text_color"
+                            android:textSize="@dimen/toolbar_text_size" />
+
+                        <TextView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_margin="3dp"
+                            android:layout_marginRight="10dp"
+                            android:background="@drawable/circle_bg_selector"
+                            android:gravity="center"
+                            android:text="1"
+                            android:textColor="@color/white"
+                            android:textSize="16sp" />
+                    </com.like.customview.SelectedRelativeLayout>
+
+                    <com.like.customview.SelectWeekView
+                        android:id="@+id/week_select"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/week_title_container"
+                        android:orientation="horizontal"
+                        android:padding="5dp" >
+                    </com.like.customview.SelectWeekView>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/week_select"
+                        android:background="@drawable/stroke_grey_bg"
+                        android:orientation="horizontal"
+                        android:padding="10dp" >
+
+                        <TextView
+                            android:id="@+id/week_begin_hour"
+                            style="@style/DateTextStyle"
+                            android:layout_width="0dp"
+                            android:layout_height="25dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/stroke_grey_bg"
+                            android:gravity="center"
+                            android:text="00时" />
+
+                        <TextView
+                            android:id="@+id/week_begin_minute"
+                            style="@style/DateTextStyle"
+                            android:layout_width="0dp"
+                            android:layout_height="25dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/stroke_grey_bg"
+                            android:gravity="center"
+                            android:text="00分" />
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/hor_lineheight"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_weight="0.5"
+                            android:background="@color/primary_background_color" />
+
+                        <TextView
+                            android:id="@+id/week_end_hour"
+                            style="@style/DateTextStyle"
+                            android:layout_width="0dp"
+                            android:layout_height="25dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/stroke_grey_bg"
+                            android:gravity="center"
+                            android:text="00时" />
+
+                        <TextView
+                            android:id="@+id/week_end_minute"
+                            style="@style/DateTextStyle"
+                            android:layout_width="0dp"
+                            android:layout_height="25dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/stroke_grey_bg"
+                            android:gravity="center"
+                            android:text="00分" />
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="15dp"
+                    android:orientation="vertical" >
+
+                    <com.like.customview.SelectedRelativeLayout
+                        android:id="@+id/year_title_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/title_bg_selector" >
+
+                        <TextView
+                            android:id="@+id/year_title"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center"
+                            android:padding="3dp"
+                            android:text="年月日（连续日程）"
+                            android:textColor="@color/title_text_color"
+                            android:textSize="@dimen/toolbar_text_size" />
+
+                        <TextView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_margin="3dp"
+                            android:layout_marginRight="10dp"
+                            android:background="@drawable/circle_bg_selector"
+                            android:gravity="center"
+                            android:text="2"
+                            android:textColor="@color/white"
+                            android:textSize="16sp" />
+                    </com.like.customview.SelectedRelativeLayout>
+
+                    <LinearLayout
+                        android:id="@+id/year_select"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/year_title_container"
+                        android:background="@drawable/stroke_grey_bg"
+                        android:orientation="horizontal"
+                        android:padding="10dp" >
+
+                        <TextView
+                            android:id="@+id/year_begin_year"
+                            style="@style/DateTextStyle"
+                            android:layout_width="0dp"
+                            android:layout_height="25dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/stroke_grey_bg"
+                            android:gravity="center"
+                            android:text="15年" />
+
+                        <TextView
+                            android:id="@+id/year_begin_month"
+                            style="@style/DateTextStyle"
+                            android:layout_width="0dp"
+                            android:layout_height="25dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/stroke_grey_bg"
+                            android:gravity="center"
+                            android:text="08月" />
+
+                        <TextView
+                            android:id="@+id/year_begin_day"
+                            style="@style/DateTextStyle"
+                            android:layout_width="0dp"
+                            android:layout_height="25dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/stroke_grey_bg"
+                            android:gravity="center"
+                            android:text="11日" />
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/hor_lineheight"
+                            android:layout_gravity="center"
+                            android:layout_marginRight="5dp"
+                            android:layout_weight="0.5"
+                            android:background="@color/primary_background_color" />
+
+                        <TextView
+                            android:id="@+id/year_end_year"
+                            style="@style/DateTextStyle"
+                            android:layout_width="0dp"
+                            android:layout_height="25dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/stroke_grey_bg"
+                            android:gravity="center"
+                            android:text="16年" />
+
+                        <TextView
+                            android:id="@+id/year_end_month"
+                            style="@style/DateTextStyle"
+                            android:layout_width="0dp"
+                            android:layout_height="25dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/stroke_grey_bg"
+                            android:gravity="center"
+                            android:text="02月" />
+
+                        <TextView
+                            android:id="@+id/year_end_day"
+                            style="@style/DateTextStyle"
+                            android:layout_width="0dp"
+                            android:layout_height="25dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/stroke_grey_bg"
+                            android:gravity="center"
+                            android:text="23日" />
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="15dp"
+                    android:orientation="vertical"
+                    android:paddingTop="5dp" >
+
+                    <com.like.customview.SelectedRelativeLayout
+                        android:id="@+id/man_title_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/title_bg_selector"
+                        android:orientation="horizontal"
+                        android:padding="3dp" >
+
+                        <TextView
+                            android:id="@+id/man_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:gravity="center"
+                            android:text="手动选日期"
+                            android:textColor="@color/title_text_color"
+                            android:textSize="@dimen/toolbar_text_size" />
+
+                        <TextView
+                            android:layout_width="15dp"
+                            android:layout_height="10dp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="3dp"
+                            android:layout_toRightOf="@id/man_title"
+                            android:background="@drawable/date_arrow_bg_selector" />
+
+                        <TextView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_margin="3dp"
+                            android:background="@drawable/circle_bg_selector"
+                            android:gravity="center"
+                            android:text="3"
+                            android:textColor="@color/white"
+                            android:textSize="16sp" />
+                    </com.like.customview.SelectedRelativeLayout>
+
+                    <LinearLayout
+                        android:id="@+id/man_select"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/man_title_container"
+                        android:background="@drawable/stroke_grey_bg"
+                        android:orientation="horizontal"
+                        android:padding="10dp" >
+
+                        <TextView
+                            android:id="@+id/man_begin_hour"
+                            style="@style/DateTextStyle"
+                            android:layout_width="0dp"
+                            android:layout_height="25dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/stroke_grey_bg"
+                            android:gravity="center"
+                            android:text="00时" />
+
+                        <TextView
+                            android:id="@+id/man_begin_minute"
+                            style="@style/DateTextStyle"
+                            android:layout_width="0dp"
+                            android:layout_height="25dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/stroke_grey_bg"
+                            android:gravity="center"
+                            android:text="00分" />
+
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/hor_lineheight"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_weight="0.5"
+                            android:background="@color/primary_background_color" />
+
+                        <TextView
+                            android:id="@+id/man_end_hour"
+                            style="@style/DateTextStyle"
+                            android:layout_width="0dp"
+                            android:layout_height="25dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="5dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/stroke_grey_bg"
+                            android:gravity="center"
+                            android:text="00时" />
+
+                        <TextView
+                            android:id="@+id/man_end_minute"
+                            style="@style/DateTextStyle"
+                            android:layout_width="0dp"
+                            android:layout_height="25dp"
+                            android:layout_marginLeft="5dp"
+                            android:layout_weight="1"
+                            android:background="@drawable/stroke_grey_bg"
+                            android:gravity="center"
+                            android:text="00分" />
+                    </LinearLayout>
+                </RelativeLayout>
+            </LinearLayout>
+
+            <!-- 价格 -->
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+	            android:focusable="true"
+	            android:focusableInTouchMode="true"
+                android:background="@color/white"
+                android:padding="10dp" >
+
+                <TextView
+                    android:id="@+id/price_title"
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:text="价格"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_s1" />
+
+                <TextView
+                    android:id="@+id/price_unit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/price_title"
+                    android:text="￥"
+                    android:textColor="@color/red"
+                    android:textSize="@dimen/text_size_s1" />
+
+                <TextView
+                    android:id="@+id/price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/price_unit"
+                    android:text="229"
+                    android:textColor="@color/red"
+                    android:textSize="@dimen/text_size_s1" />
+
+                <View
+                    android:id="@+id/price_deliver"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/hor_lineheight"
+                    android:layout_below="@id/price_title"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/primary_background_color" />
+
+                <TextView
+                    android:id="@+id/location_title"
+                    style="@style/TitleTextStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/price_deliver"
+                    android:layout_marginBottom="5dp"
+                    android:text="上课地址/区域" />
+
+                <EditText
+                    android:id="@+id/location"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/location_title"
+                    android:background="@drawable/solid_grey_bg"
+                    android:paddingBottom="3dp"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:paddingTop="3dp"
+                    android:hint="XXXX路XXX区89号"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_s1" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:background="@color/white"
+                android:padding="10dp" >
+
+                <TextView
+                    android:id="@+id/refund"
+                    style="@style/TitleTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="是否支持付款" />
+
+                <TextView
+                    android:id="@+id/refund_icon"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/red_alert" />
+
+                <TextView
+                    style="@style/TitleTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toLeftOf="@id/refund_icon"
+                    android:text="退款规则" />
+
+                <RadioGroup
+                    android:id="@+id/radioGroup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/refund"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:orientation="horizontal" >
+
+                    <RadioButton
+                        android:id="@+id/tuikuan_support"
+                        style="@style/TitleTextStyle"
+                        android:layout_width="70dp"
+                        android:layout_height="25dp"
+                        android:layout_marginRight="10dp"
+                        android:background="@drawable/radio_bg_selector"
+                        android:button="@null"
+                        android:checked="true"
+                        android:gravity="center"
+                        android:text="支持" />
+
+                    <RadioButton
+                        android:id="@+id/tuikuan_no"
+                        style="@style/TitleTextStyle"
+                        android:layout_width="70dp"
+                        android:layout_height="25dp"
+                        android:layout_marginLeft="10dp"
+                        android:background="@drawable/radio_bg_selector"
+                        android:button="@null"
+                        android:gravity="center"
+                        android:text="不支持" />
+                </RadioGroup>
+            </RelativeLayout>
+
+            <!-- 开班人数 -->
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:background="@color/white"
+                android:padding="10dp" >
+
+                <TextView
+                    android:id="@+id/people_count_title"
+                    style="@style/TitleTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="开班人数" />
+
+                <LinearLayout
+                    android:id="@+id/people_count_container"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_toRightOf="@id/people_count_title"
+                    android:orientation="horizontal" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="不少于"
+                        android:textSize="@dimen/text_size_s1" />
+
+                    <TextView
+                        android:id="@+id/people_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="5人"
+                        android:textSize="@dimen/text_size_s1" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/minimum_title"
+                    style="@style/TitleTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/people_count_title"
+                    android:layout_marginTop="15dp"
+                    android:text="保底开班" />
+
+                <RadioGroup
+                    android:id="@+id/minimun_group"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/minimum_title"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal" >
+
+                    <RadioButton
+                        android:id="@+id/no_min_radio"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:button="@drawable/xmlbtn_sexradio"
+                        android:checked="true"
+                        android:drawablePadding="5dp"
+                        android:text="报名即可开班"
+                        android:textColor="#7C7C7C"
+                        android:textSize="@dimen/text_size" />
+
+                    <RadioButton
+                        android:id="@+id/min_radio"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="5dp"
+                        android:layout_weight="1"
+                        android:button="@drawable/xmlbtn_sexradio"
+                        android:gravity="right"
+                        android:text="设置保底开班人数"
+                        android:textColor="#7C7C7C"
+                        android:textSize="@dimen/text_size" />
+                </RadioGroup>
+            </RelativeLayout>
+
+            <!-- 开班规则 -->
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:background="@color/white"
+                android:padding="10dp" >
+
+                <TextView
+                    android:id="@+id/rule_title"
+                    style="@style/TitleTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="开班规则" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/rule_title"
+                    android:orientation="horizontal"
+                    android:paddingLeft="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingTop="5dp" >
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="1"
+                        android:text="最少1人开单"
+                        android:textSize="@dimen/text_size_s1" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1"
+                        android:text="开班3天谴预约"
+                        android:textSize="@dimen/text_size_s1" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <!-- 课程简介 -->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:background="@color/white"
+                android:orientation="vertical"
+                android:paddingBottom="10dp"
+                android:paddingLeft="30dp"
+                android:paddingRight="30dp"
+                android:paddingTop="10dp" >
+
+                <TextView
+                    style="@style/TitleTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="课程简介" />
+
+                <EditText
+                    android:id="@+id/description"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/stroke_grey_bg"
+                    android:gravity="top"
+                    android:hint="  请输入少于20字自我介绍"
+                    android:padding="5dp"
+                    android:singleLine="false"
+                    android:textSize="@dimen/text_size_s1" />
+            </LinearLayout>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="30dp"
+                android:background="@drawable/btn_red_selector"
+                android:onClick="publish"
+                android:text="发布课程"
+                android:textColor="@color/white" />
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

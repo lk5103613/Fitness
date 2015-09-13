@@ -1,0 +1,46 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.like.fitness.MyOrderActivity" 
+    android:orientation="vertical"
+    android:background="@color/primary_background_color">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/toolbar_height"
+        android:background="@color/primary_red_color" >
+        
+        <RelativeLayout
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:onClick="back" >
+
+            <ImageView
+                android:layout_width="28dp"
+                android:layout_height="20dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/back" />
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="我的钱包"
+            android:textColor="@color/white"
+            android:textSize="@dimen/toolbar_text_size" />
+    </RelativeLayout>
+     <com.like.customview.PagerSlidingTabStrip
+            android:id="@+id/wallet_tap"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="@color/white" />
+
+        <com.like.customview.BarViewPager
+            android:id="@+id/wallet_pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+</LinearLayout>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+    <color name="red">#FE0405</color>
+    
+    <color name="primary_red_color">#FF7875</color>
+    <color name="primary_background_color">#F4F4F4</color>
+    
+    <color name="grey_btn_bg_color">#fafafa</color>
+    <color name="grey_btn_text_color">#9e9e9e</color>
+    <color name="btn_red_normal_bg_color">#ff7875</color>
+    <color name="btn_red_pressed_bg_color">#f99c9a</color>
+    <color name="btn_grey_normal_bg_color">#e3e3e3</color>
+    <color name="btn_grey_pressed_bg_color">#b6abab</color>
+    <color name="btn_grey_text_color">#ff7783</color>
+    
+    <color name="divider_color">#e2e2e2</color>
+    
+    <color name="color_1">#fe9c9d</color>
+    <color name="color_2">#9db7ff</color>
+    <color name="color_3">#d89afd</color>
+    <color name="color_4">#ADE880</color>
+    <color name="color_5">#FFCA74</color>
+    <color name="color_6">#D7D7D7</color>
+
+    
+    
+    <!-- ZXing -->
+      <color name="bg_color">#EDEDED</color>
+	  <color name="contents_text">#ff000000</color>
+	  <color name="encode_view">#ffffffff</color>
+	  <color name="help_button_view">#ffcccccc</color>
+	  <color name="help_view">#ff404040</color>
+	  <color name="possible_result_points">#c0ffff00</color>  
+	  <color name="result_image_border">#ffffffff</color>
+	  <color name="result_minor_text">#ffc0c0c0</color>
+	  <color name="result_points">#c000ff00</color>
+	  <color name="result_text">#ffffffff</color>
+	  <color name="result_view">#b0000000</color>
+	  <color name="sbc_header_text">#ff808080</color>
+	  <color name="sbc_header_view">#ffffffff</color>
+	  <color name="sbc_list_item">#fffff0e0</color>
+	  <color name="sbc_layout_view">#ffffffff</color>
+	  <color name="sbc_page_number_text">#ff000000</color>
+	  <color name="sbc_snippet_text">#ff4b4b4b</color>
+	  <color name="share_text">#ff000000</color>
+	  <color name="share_view">#ffffffff</color>
+	  <color name="status_view">#50000000</color>
+	  <color name="status_text">#ffffffff</color>
+	  <color name="transparent">#00000000</color>
+	  <color name="viewfinder_frame">#ff000000</color>
+	  <color name="viewfinder_laser">#ffff0000</color>
+	  <color name="viewfinder_mask">#60000000</color>
+	  <color name="header">#58567D</color>
+	  <color name="grgray">#686868</color>
+	  
+	  
+	  <color name="none">#00000000</color>
+    
+    <color name="title_blue">#FF7875</color>
+    <color name="btn_start_press">#00497E</color>
+    <color name="reg_bg">#5594DA</color>
+    <color name="btn_loginbg">#00000000</color>
+    <color name="text_gray">#55585F</color>
+    <color name="loginbg">#F4FBFF</color>
+    <color name="linebg">#E3E6EB</color>
+    <color name="gnsybg">#666666</color>
+    <color name="tc_other_login">#666666</color>
+    <color name="no_networkbg">#F3E6AE</color>
+    <color name="no_networktvcolor">#C0C0C0</color>
+    <color name="intro_text">#EAD9A1</color>
+    <color name="week_text">#5672A1</color>
+    <color name="bg_line">#A8D6D6</color>
+    
+     <color name="background_tab_pressed">#6633B5E5</color>
+    
+</resources>

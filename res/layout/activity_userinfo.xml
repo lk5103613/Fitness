@@ -1,0 +1,347 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F4F4F4"
+    android:orientation="vertical" >
+
+    <include layout="@layout/view_title" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin"
+            android:background="@color/white"
+            android:orientation="vertical" >
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/margin" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:text="头像"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_b2" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:clickable="true"
+                    android:onClick="selectPhoto"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal" >
+
+                    <com.like.customview.RoundImageView
+                        android:id="@+id/user_icon"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:scaleType="fitXY"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/tuxiang" />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/youjian" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="@dimen/margin"
+                android:background="#E2E2E2" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/margin" >
+
+                <TextView
+                    android:id="@+id/lbl_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:text="名字"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_b2" />
+
+                <EditText
+                    android:id="@+id/name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/lbl_name"
+                    android:layout_alignParentRight="true"
+                    android:hint="点这里输入姓名"
+                    android:gravity="right"
+                    android:maxLength="7"
+                    android:text=""
+                    android:textColor="#7C7C7C"
+                    android:textSize="@dimen/text_size" 
+                    android:background="@null"/>
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="@dimen/margin"
+                android:background="#E2E2E2" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/margin" >
+
+                <TextView
+                    android:id="@+id/lbl_height"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:text="身高"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_b2" />
+
+                <TextView 
+                    android:id="@+id/cm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#7C7C7C"
+                    android:textSize="@dimen/text_size"
+                    android:layout_alignParentRight="true"
+                    android:text="CM"/>
+                <EditText
+                    android:id="@+id/height"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toLeftOf="@id/cm"
+                    android:layout_toRightOf="@id/lbl_height"
+                    android:gravity="right"
+                    android:hint="点这里输入身高"
+                    android:textColor="#7C7C7C"
+                    android:textSize="@dimen/text_size"
+                    android:inputType="number"
+                    android:maxLength="3"
+                    android:background="@null" />
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="@dimen/margin"
+                android:background="#E2E2E2" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/margin" >
+
+                <TextView
+                    android:id="@+id/lbl_weight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:text="体重"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_b2" />
+                <TextView 
+                    android:id="@+id/kg"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#7C7C7C"
+                    android:textSize="@dimen/text_size" 
+                    android:layout_alignParentRight="true"
+                    android:text="KG"/>
+                <EditText
+                    android:id="@+id/weight"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="点这里输入体重"
+                    android:gravity="right"
+                    android:layout_toLeftOf="@id/kg"
+                    android:layout_toRightOf="@id/lbl_weight"
+                    android:textColor="#7C7C7C"
+                    android:inputType="number"
+                    android:maxLength="3"
+                    android:textSize="@dimen/text_size" 
+                    android:background="@null"/>
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="@dimen/margin"
+                android:background="#E2E2E2" />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/margin" >
+
+                <TextView
+                    android:id="@+id/lbl_qm"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:text="个性签名"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_b2" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_toRightOf="@id/lbl_qm"
+                    android:layout_centerVertical="true"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal" >
+
+                    <EditText
+                        android:id="@+id/qm"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="点击这里输入个性签名"
+                        android:maxLines="3"
+                        android:gravity="right"
+                        android:textColor="#7C7C7C"
+                        android:minWidth="20dp"
+                        android:textSize="@dimen/text_size"
+                        android:background="@null" />
+                </LinearLayout>
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#E2E2E2" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="@dimen/margin" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="性别"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_size_b2" />
+
+                <RadioGroup
+                    android:id="@+id/radioGroup"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="50dp"
+                    android:orientation="horizontal" >
+
+                    <RadioButton
+                        android:id="@+id/radioButton1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:button="@drawable/xmlbtn_sexradio"
+                        android:checked="true"
+                        android:text="男"
+                        android:textColor="#7C7C7C"
+                        android:textSize="@dimen/text_size" />
+
+                    <RadioButton
+                        android:id="@+id/radioButton2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="30dp"
+                        android:button="@drawable/xmlbtn_sexradio"
+                        android:text="女"
+                        android:textColor="#7C7C7C"
+                        android:textSize="@dimen/text_size" />
+                </RadioGroup>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginLeft="@dimen/margin"
+                android:background="#E2E2E2" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/margin"
+                android:background="#F4F4F4" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin"
+                android:padding="@dimen/margin"
+                android:text="培训项目"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_b2" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#E2E2E2" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/margin" >
+
+                <LinearLayout
+                    android:id="@+id/itemlayout1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="4">
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/itemlayout2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="4" />
+                <LinearLayout
+                    android:id="@+id/itemlayout3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="4" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="@dimen/margin_s1"
+                android:background="#F4F4F4" >
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="30dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginRight="30dp"
+                    android:padding="@dimen/margin"
+                    android:background="@drawable/xmlbg_btn"
+                    android:text="下一步"
+                    android:textColor="@color/white"
+                    android:onClick="next"
+                    android:textSize="@dimen/text_size_b2" />
+            </RelativeLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

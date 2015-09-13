@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primary_background_color"
+    android:orientation="vertical" >
+    
+    <RelativeLayout 
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/toolbar_height"
+        android:background="@color/primary_red_color">
+        
+        <RelativeLayout 
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:onClick="back">
+            
+	        <ImageView android:layout_width="28dp"
+	            android:layout_height="20dp"
+	            android:layout_centerInParent="true"
+	            android:src="@drawable/back"/>
+	        
+        </RelativeLayout>
+        
+        <TextView android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/toolbar_text_size"
+            android:textColor="@color/white"
+            android:layout_centerInParent="true"
+            android:text="李雪心教练欢迎您"/>
+        
+    </RelativeLayout>
+    
+    <LinearLayout 
+        android:id="@+id/form"
+        android:layout_below="@id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:background="@color/primary_red_color"
+        android:orientation="vertical">
+        
+        <EditText 
+            android:id="@+id/txt_code"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="请输入消费码"
+            android:layout_marginBottom="40dp"
+            android:drawablePadding="10dp"
+            android:textColor="@color/black"
+            android:focusable="false"
+            android:drawableLeft="@drawable/lock"/>
+        
+    </LinearLayout>
+    
+    <Button android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/form"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:textColor="@color/white"
+        android:onClick="getCode"
+        android:background="@drawable/btn_red_selector"
+        android:text="获取消费码"/>
+    
+    
+    <LinearLayout android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:orientation="vertical"
+        android:background="@color/primary_red_color"
+        android:layout_alignParentBottom="true" >
+        <LinearLayout android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+	        <!-- NUMBER 1 -->
+            <RelativeLayout
+                android:id="@+id/btn_num_1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+		        android:clickable="true"
+                android:background="@drawable/btn_number_selector"
+                android:onClick="numberClick"
+                android:layout_weight="1">
+                
+                <LinearLayout android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+                    <TextView android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        android:text="1"/>
+                    <TextView android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="13sp"
+                        android:visibility="invisible"
+                        android:text="abc"/>
+                </LinearLayout>
+                
+            </RelativeLayout>
+            <!-- NUMBER 2 -->
+            <RelativeLayout 
+                android:id="@+id/btn_num_2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/btn_number_selector"
+		        android:clickable="true"
+                android:onClick="numberClick"
+                android:layout_weight="1">
+                
+                <LinearLayout android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+                    <TextView android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        android:text="2"/>
+                    <TextView android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="13sp"
+                        android:text="ABC"/>
+                </LinearLayout>
+                
+            </RelativeLayout>
+            <!-- NUMBER 3 -->
+            <RelativeLayout
+                android:id="@+id/btn_num_3"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/btn_number_selector"
+		        android:clickable="true"
+                android:onClick="numberClick"
+                android:layout_weight="1">
+                
+                <LinearLayout android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+                    <TextView android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        android:text="3"/>
+                    <TextView android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="13sp"
+                        android:text="DEF"/>
+                </LinearLayout>
+                
+            </RelativeLayout>
+	        
+        </LinearLayout>
+        <!-- Line 2 -->
+        <LinearLayout android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+	        <!-- NUMBER 4 -->
+            <RelativeLayout
+                android:id="@+id/btn_num_4"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/btn_number_selector"
+		        android:clickable="true"
+                android:onClick="numberClick"
+                android:layout_weight="1">
+                
+                <LinearLayout android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+                    <TextView android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        android:text="4"/>
+                    <TextView android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="13sp"
+                        android:visibility="invisible"
+                        android:text="GHI"/>
+                </LinearLayout>
+                
+            </RelativeLayout>
+            <!-- NUMBER 5 -->
+            <RelativeLayout 
+                android:id="@+id/btn_num_5"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/btn_number_selector"
+		        android:clickable="true"
+                android:onClick="numberClick"
+                android:layout_weight="1">
+                
+                <LinearLayout android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+                    <TextView android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        android:text="5"/>
+                    <TextView android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="13sp"
+                        android:text="JKL"/>
+                </LinearLayout>
+                
+            </RelativeLayout>
+            <!-- NUMBER 6 -->
+            <RelativeLayout
+                android:id="@+id/btn_num_6"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/btn_number_selector"
+		        android:clickable="true"
+                android:onClick="numberClick"
+                android:layout_weight="1">
+                
+                <LinearLayout android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+                    <TextView android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        android:text="6"/>
+                    <TextView android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="13sp"
+                        android:text="MNO"/>
+                </LinearLayout>
+                
+            </RelativeLayout>
+	        
+        </LinearLayout>
+        <!-- line 3 -->
+        <LinearLayout android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+	        <!-- NUMBER 7 -->
+            <RelativeLayout
+                android:id="@+id/btn_num_7"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/btn_number_selector"
+		        android:clickable="true"
+                android:onClick="numberClick"
+                android:layout_weight="1">
+                
+                <LinearLayout android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+                    <TextView android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        android:text="7"/>
+                    <TextView android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="13sp"
+                        android:visibility="invisible"
+                        android:text="PQRS"/>
+                </LinearLayout>
+                
+            </RelativeLayout>
+            <!-- NUMBER 8 -->
+            <RelativeLayout 
+                android:id="@+id/btn_num_8"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/btn_number_selector"
+		        android:clickable="true"
+                android:onClick="numberClick"
+                android:layout_weight="1">
+                
+                <LinearLayout android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+                    <TextView android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        android:text="8"/>
+                    <TextView android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="13sp"
+                        android:text="TUV"/>
+                </LinearLayout>
+                
+            </RelativeLayout>
+            <!-- NUMBER 9 -->
+            <RelativeLayout
+                android:id="@+id/btn_num_9"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/btn_number_selector"
+		        android:clickable="true"
+                android:onClick="numberClick"
+                android:layout_weight="1">
+                
+                <LinearLayout android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+                    <TextView android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        android:text="9"/>
+                    <TextView android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="13sp"
+                        android:text="WXYZ"/>
+                </LinearLayout>
+                
+            </RelativeLayout>
+	        
+        </LinearLayout>
+        <!-- line 4 -->
+        <LinearLayout android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+	        <!-- null -->
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:background="#d2d7db"
+                android:layout_weight="1">
+                
+            </RelativeLayout>
+            <!-- NUMBER 0 -->
+            <RelativeLayout 
+                android:id="@+id/btn_num_0"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/btn_number_selector"
+		        android:clickable="true"
+                android:onClick="numberClick"
+                android:layout_weight="1">
+                
+                <LinearLayout android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical">
+                    <TextView android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/black"
+                        android:textSize="18sp"
+                        android:text="0"/>
+                </LinearLayout>
+                
+            </RelativeLayout>
+            <!-- delete -->
+            <RelativeLayout
+                android:id="@+id/btn_delete"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:background="#d2d7db"
+                android:onClick="numberClick"
+                android:layout_weight="1">
+                
+                <ImageView android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/btn_delete"/>
+                
+            </RelativeLayout>
+	        
+        </LinearLayout>
+    </LinearLayout>
+    
+    
+
+</RelativeLayout>

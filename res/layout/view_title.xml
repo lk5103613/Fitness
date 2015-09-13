@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/title_height"
+    android:gravity="center" >
+
+    <!-- 防止edittext 自动获得焦点 -->
+
+
+    <!--
+         <LinearLayout
+        android:id="@+id/linearLayout_focus"
+        android:layout_width="0px"
+        android:layout_height="0px"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:orientation="horizontal" />
+    -->
+
+    <RelativeLayout
+        android:id="@+id/title_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_height"
+        android:background="@color/title_blue"
+        android:gravity="center" >
+
+        <!-- 消息标题左上角头像 -->
+
+
+        <!-- 左边按钮布局 -->
+
+        <RelativeLayout
+            android:id="@+id/title_left_layout"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:clickable="true"
+            android:paddingLeft="5dp"
+            android:paddingRight="10dp" >
+            <!-- android:background="@drawable/xmlbtn_green_to_darkgreen" -->
+
+            <!-- 左字样 -->
+
+            <TextView
+                android:id="@+id/title_left_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:textColor="@color/white"
+                android:textSize="@dimen/title_tv_text_size" />
+            <!-- 返回小箭头 -->
+                <!-- android:layout_toRightOf="@id/title_left_iv" -->
+
+            <ImageView
+                android:id="@+id/title_left_iv"
+                android:layout_width="@dimen/title_icon_width"
+                android:layout_height="@dimen/title_icon_width"
+                android:layout_centerInParent="true"
+                android:scaleType="centerInside"
+                android:clickable="true"
+                android:onClick="back"
+                android:src="@drawable/arrow_global_back" />
+        </RelativeLayout>
+
+        <!-- 右边按钮布局 -->
+
+        <RelativeLayout
+            android:id="@+id/title_right_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:clickable="true"
+            android:gravity="center" >
+            <!-- android:background="@drawable/xmlbtn_green_to_darkgreen" -->
+
+            <!-- 右文字按钮 -->
+
+            <TextView
+                android:id="@+id/title_right_tv"
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:gravity="center"
+                android:singleLine="true"
+                android:text=""
+                android:textColor="@color/white"
+                android:textSize="@dimen/title_btn_text_size" />
+            <!-- 右图形按钮 -->
+
+            <ImageView
+                android:id="@+id/title_right_iv"
+                android:layout_width="60dp"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:scaleType="centerInside"
+                android:src="@null" />
+        </RelativeLayout>
+
+        <!-- 中间部分布局：宽度fill两边 -->
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:background="@null"
+            android:gravity="center" >
+
+            <!-- 中间标题 -->
+
+            <TextView
+                android:id="@+id/title_middle_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:ellipsize="marquee"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:gravity="center"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:singleLine="true"
+                android:text="发布课程"
+                android:textColor="@color/white"
+                android:textSize="@dimen/title_tv_text_size" />
+
+            
+        </RelativeLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

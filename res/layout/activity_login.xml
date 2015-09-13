@@ -1,0 +1,168 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/primary_background_color"
+    tools:context="com.like.fitness.LoginActivity" 
+    android:id="@+id/login_container">
+    
+    <!-- 头部toolbar -->
+    <RelativeLayout 
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/toolbar_height"
+        android:background="@color/primary_red_color">
+        
+        <TextView android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:layout_centerInParent="true"
+            android:textSize="@dimen/toolbar_text_size"
+            android:text="logo"/>
+        
+    </RelativeLayout>
+    
+    <!-- 头部播放区域 -->
+    <RelativeLayout 
+        android:layout_width="match_parent"
+        android:layout_height="160dp">
+        
+        <SurfaceView
+            android:id="@+id/surface_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/player_preview" />
+        
+        <ImageView 
+            android:id="@+id/player_indicator"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/player"/>
+        
+    </RelativeLayout>
+    
+    <RelativeLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:paddingTop="5dp"
+        android:paddingBottom="7dp"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp">
+        
+        <LinearLayout
+            android:id="@+id/phone_form"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="6dp"
+            android:orientation="horizontal">
+            
+            <TextView android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:layout_marginRight="5dp"
+                android:text="手机号码"/>
+            
+            <EditText 
+                android:id="@+id/txt_phone"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:textSize="18sp"
+                android:inputType="number"
+                android:hint="请输入手机号码"
+                android:textColor="@color/grey_btn_text_color"
+                android:background="@drawable/txt_grey_bg"
+                android:text="13402170780"
+                android:maxLength="11"/>
+            
+        </LinearLayout>
+        
+        <View android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_centerVertical="true"
+            android:background="@color/divider_color" />
+        
+        <LinearLayout 
+            android:id="@+id/pwd_form"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/phone_form"
+            android:padding="6dp"
+            android:orientation="horizontal">
+            
+            <TextView android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:layout_marginRight="5dp"
+                android:text="密码"/>
+            
+            <EditText 
+                android:id="@+id/txt_pwd"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:textSize="18sp"
+                android:hint="请输入密码"
+                android:inputType="textPassword"
+                android:textColor="@color/grey_btn_text_color"
+                android:text="1"
+                android:background="@drawable/txt_grey_bg"/>
+            
+        </LinearLayout>
+        
+   </RelativeLayout> 
+   <RelativeLayout 
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:layout_marginTop="19dp"
+       android:paddingTop="20dp"
+       android:paddingLeft="13dp"
+       android:paddingRight="13dp"
+       android:background="@color/white">
+        
+       <Button 
+           android:id="@+id/btn_login"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:text="登陆"
+           android:textColor="@color/white"
+           android:onClick="login"
+           android:background="@drawable/btn_red_selector"/>
+       
+       <Button 
+           android:id="@+id/btn_new_register"
+           android:layout_below="@id/btn_login"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_alignParentLeft="true"
+           android:textSize="15sp"
+           android:textColor="@color/btn_grey_text_color"
+           android:layout_marginTop="10dp"
+           android:text="新用户注册"
+           android:onClick="registered"
+           android:background="@drawable/btn_grey_selector" />
+       
+       <Button 
+           android:id="@+id/btn_weibo_login"
+           android:layout_below="@id/btn_login"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_alignParentRight="true"
+           android:textSize="15sp"
+           android:textColor="@color/btn_grey_text_color"
+           android:layout_marginTop="10dp"
+           android:text="使用微信号登陆"
+           android:background="@drawable/btn_grey_selector" />
+       
+   </RelativeLayout>
+
+</LinearLayout>
