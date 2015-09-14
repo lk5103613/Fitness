@@ -27,7 +27,7 @@ public class ClassStudentFragment extends BaseFragment {
 	
 	private ListView mClassListView;
 	private ClassListAdapter mAdapter;
-	private List<ClassEntity> classEntities = new ArrayList<>();
+	private List<ClassEntity> classEntities = new ArrayList<ClassEntity>();
 	private FragmentListener mListener;
 	
 	@Override

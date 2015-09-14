@@ -26,7 +26,7 @@ public class MainActivity extends BaseActivity {
 			public void onItemClick(AdapterView<?> arg0, View arg1, int position,
 					long arg3) {
 				Intent intent;
-				int drawable = (int) mAdapter.getItem(position);
+				int drawable = (Integer) mAdapter.getItem(position);
 				switch (drawable) {
 				case R.drawable.main_001:
 					intent = new Intent(mContext, PerEditInfoActivity.class);

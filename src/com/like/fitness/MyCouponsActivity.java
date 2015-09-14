@@ -29,8 +29,8 @@ public class MyCouponsActivity extends Activity implements OnClickListener{
 	private CouponsPersonAdapter mListAdapter;
 	private CouponsGridAdapter mGridAdapter;
 	
-	private List<CouponsUser> mCouponsUsers = new ArrayList<>();
-	private List<Integer> mCoupons = new ArrayList<>();
+	private List<CouponsUser> mCouponsUsers = new ArrayList<CouponsUser>();
+	private List<Integer> mCoupons = new ArrayList<Integer>();
 	
 	private int mScreenWidth;
 	private int mScreenHeight;

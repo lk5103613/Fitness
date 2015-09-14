@@ -93,7 +93,7 @@ public class UserInfoActivity extends BaseActivity {
 		mSkillsContainer = (ViewGroup) findViewById(R.id.itemlayout1);
 		mSkillsContainer2 = (ViewGroup) findViewById(R.id.itemlayout2);
 		mSkillsContainer3 = (ViewGroup) findViewById(R.id.itemlayout3);
-		mSkills = new ArrayList<>();
+		mSkills = new ArrayList<String>();
 		
 		mDataFetcher = DataFetcher.getInstance(mContext);
 		mDataFetcher.fetchCat(new Listener<JSONArray>() {

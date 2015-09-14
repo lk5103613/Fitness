@@ -22,7 +22,7 @@ public class MyNetworkUtil {
 
         mLoader = new ImageLoader(mQueue,
                 new ImageLoader.ImageCache() {
-                    private final LruCache<String, Bitmap> cache = new LruCache<>(20*1024*1024);
+                    private final LruCache<String, Bitmap> cache = new LruCache<String, Bitmap>(20*1024*1024);
                     @Override
                     public Bitmap getBitmap(String url) {
                         return cache.get(url);
