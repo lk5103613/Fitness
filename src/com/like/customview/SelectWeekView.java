@@ -15,8 +15,8 @@ import com.like.fitness.R;
 
 public class SelectWeekView extends LinearLayout{
 	
-	private List<CheckBox> mCheckBoxs = new ArrayList<>();
-	private List<String> mCheckedValues = new ArrayList<>();
+	private List<CheckBox> mCheckBoxs = new ArrayList<CheckBox>();
+	private List<String> mCheckedValues = new ArrayList<String>();
 	
 	private Context mContext;
 	public SelectWeekView(Context context) {
@@ -62,5 +62,5 @@ public class SelectWeekView extends LinearLayout{
 	public List<String> getCheckedValue() {
 		return mCheckedValues;
 	}
-	
+
 }

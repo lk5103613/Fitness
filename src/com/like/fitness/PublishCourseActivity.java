@@ -66,13 +66,13 @@ public class PublishCourseActivity extends BaseActivity implements OnClickListen
 
 	private SelectWeekView mSelectWeekView;
 
-	private ArrayList<Integer> hours = new ArrayList<>();
-	private ArrayList<Integer> mins = new ArrayList<>();
-	private ArrayList<Integer> years = new ArrayList<>();
-	private ArrayList<Integer> months = new ArrayList<>();
-	private ArrayList<Integer> days = new ArrayList<>();
-	private ArrayList<Integer> count = new ArrayList<>();
-	private ArrayList<Integer> gridDates = new ArrayList<>();
+	private ArrayList<Integer> hours = new ArrayList<Integer>();
+	private ArrayList<Integer> mins = new ArrayList<Integer>();
+	private ArrayList<Integer> years = new ArrayList<Integer>();
+	private ArrayList<Integer> months = new ArrayList<Integer>();
+	private ArrayList<Integer> days = new ArrayList<Integer>();
+	private ArrayList<Integer> count = new ArrayList<Integer>();
+	private ArrayList<Integer> gridDates = new ArrayList<Integer>();
 
 	private TimePopWindow mWeekBeginHourPop, mWeekBeginMinPop, mWeekEndHourPop,
 			mWeekEndMinPop;
@@ -209,7 +209,7 @@ public class PublishCourseActivity extends BaseActivity implements OnClickListen
 	}
 
 	private List<Integer> getDays(int daysCnt) {
-		List<Integer> result = new ArrayList<>();
+		List<Integer> result = new ArrayList<Integer>();
 		for (int i = 1; i <= daysCnt; i++) {
 			result.add(i);
 		}

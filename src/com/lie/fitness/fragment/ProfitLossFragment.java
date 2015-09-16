@@ -24,7 +24,7 @@ public class ProfitLossFragment extends BaseFragment{
 	
 	private ListView mListView;
 	private ProfitLostAdapter mAdapter;
-	private List<ProfitLost> mProfitLosts = new ArrayList<>();
+	private List<ProfitLost> mProfitLosts = new ArrayList<ProfitLost>();
 	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,

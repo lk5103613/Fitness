@@ -24,7 +24,7 @@ public class DateSelectPopWindow extends PopupWindow implements OnItemClickListe
 	private List<Integer> mDates;
 	private GridView mDateGrid;
 	
-	private List<String> mSelectedDates = new ArrayList<>();
+	private List<String> mSelectedDates = new ArrayList<String>();
 	
 	public DateSelectPopWindow(Context context, List<Integer> dates){
 		super();
