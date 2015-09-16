@@ -62,5 +62,5 @@ public class SelectWeekView extends LinearLayout{
 	public List<String> getCheckedValue() {
 		return mCheckedValues;
 	}
-
+	
 }
